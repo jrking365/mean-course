@@ -1,4 +1,6 @@
-<textarea rows="6"></textarea>
+<!-- Double way binding  -->
+<textarea rows="6" [value]="newPost"></textarea>
 <hr>
 <!-- Creating event binding in angular -->
 <button (click)="onAddPost()">Save Post</button>
+<p>{{ newPost }}</p>
