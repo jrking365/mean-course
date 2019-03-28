@@ -1,6 +1,9 @@
 <!-- property binding  -->
-<textarea rows="6" [value]="newPost" #postInput ></textarea><!--creating an atribute on the element.. note it can only be use in the template-->
+<!-- atribute on the element.. note it can only be use in the template-->
+<!-- <textarea rows="6" [value]="newPost" #postInput >-->
+<textarea rows="6" [(ngModel)]="enteredValue" > <!--Two way Binding but we had to import FormsModule for ngModel in our app.module-->
+</textarea>
 <hr>
 <!-- Creating event binding in angular -->
-<button (click)="onAddPost(postInput)">Save Post</button><!--Passing that attribute to our function -->
+<button (click)="onAddPost()">Save Post</button><!--Passing that attribute to our function -->
 <p>{{ newPost }}</p>
