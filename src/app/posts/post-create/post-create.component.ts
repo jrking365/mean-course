@@ -12,6 +12,6 @@ import { Component } from '@angular/core';
 
    onAddPost() {
      alert('Post added');
-     this.newPost = this.enteredValue;
+     this.newPost = this.enteredValue; // enteredValue from the two way binding on our textarea
    }
  }
