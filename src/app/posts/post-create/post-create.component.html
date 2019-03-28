@@ -1,9 +1,15 @@
-<!-- property binding  -->
-<!-- atribute on the element.. note it can only be use in the template-->
-<!-- <textarea rows="6" [value]="newPost" #postInput >-->
-<textarea rows="6" [(ngModel)]="enteredValue" > <!--Two way Binding but we had to import FormsModule for ngModel in our app.module-->
-</textarea>
-<hr>
-<!-- Creating event binding in angular -->
-<button (click)="onAddPost()">Save Post</button><!--Passing that attribute to our function -->
+<mat-card>
+  <mat-form-field>
+    <!-- property binding  -->
+    <!-- atribute on the element.. note it can only be use in the template-->
+    <!-- <textarea rows="6" [value]="newPost" #postInput >-->
+    <textarea matInput rows="6" [(ngModel)]="enteredValue">
+ <!--Two way Binding but we had to import FormsModule for ngModel in our app.module-->
+    </textarea>
+  </mat-form-field>
+  <!-- Creating event binding in angular -->
+  <button mat-raised-button color="accent" (click)="onAddPost()">Save Post</button
+  ><!--Passing that attribute to our function -->
+</mat-card>
+
 <p>{{ newPost }}</p>
