@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
  export class PostCreateComponent {
    newPost = 'NO CONTENT';
 
-   onAddPost() {
+   onAddPost(postInput: HTMLTextAreaElement ) {
      alert('Post added');
-     this.newPost = 'The user\'s post';
+     this.newPost = postInput.value;
    }
  }
