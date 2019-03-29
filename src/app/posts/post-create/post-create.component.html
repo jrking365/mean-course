@@ -1,9 +1,12 @@
 <mat-card>
   <mat-form-field>
+    <input matInput type="text" [(ngModel)]="enteredTitle"/>
+  </mat-form-field>
+  <mat-form-field>
     <!-- property binding  -->
     <!-- atribute on the element.. note it can only be use in the template-->
     <!-- <textarea rows="6" [value]="newPost" #postInput >-->
-    <textarea matInput rows="6" [(ngModel)]="enteredValue">
+    <textarea matInput rows="6" [(ngModel)]="enteredContent">
  <!--Two way Binding but we had to import FormsModule for ngModel in our app.module-->
     </textarea>
   </mat-form-field>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post-create',
@@ -9,10 +9,15 @@ import { Component } from '@angular/core';
 
  export class PostCreateComponent {
    newPost = 'NO CONTENT';
-   enteredValue = '';
+   enteredContent = '';
+   enteredTitle = '';
+   @Output() postCreated = new EventEmitter();
 
    onAddPost() {
-     alert('Post added');
-     this.newPost = this.enteredValue; // enteredValue from the two way binding on our textarea
+    const post = {
+      title : this.enteredTitle,
+      content : this.enteredContent
+    };
+    this.postCreated.emit(post);
    }
  }
