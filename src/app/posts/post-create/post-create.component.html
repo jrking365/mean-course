@@ -1,17 +1,17 @@
 <mat-card>
-  <mat-form-field>
-    <input matInput type="text" [(ngModel)]="enteredTitle"/>
-  </mat-form-field>
-  <mat-form-field>
-    <!-- property binding  -->
-    <!-- atribute on the element.. note it can only be use in the template-->
-    <!-- <textarea rows="6" [value]="newPost" #postInput >-->
-    <textarea matInput rows="6" [(ngModel)]="enteredContent">
- <!--Two way Binding but we had to import FormsModule for ngModel in our app.module-->
-    </textarea>
-  </mat-form-field>
-  <!-- Creating event binding in angular -->
-  <button mat-raised-button color="accent" (click)="onAddPost()">Save Post</button
-  ><!--Passing that attribute to our function -->
+  <form (submit)="onAddPost(postForm)" #postForm= "ngForm">
+    <mat-form-field>
+      <input matInput type="text" name="title" ngModel required #title="ngModel" />
+      <mat-error *ngIf="title.invalid">Please enter a post title</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <!--Two way Binding but we had to import FormsModule for ngModel in our app.module-->
+      <textarea matInput rows="4" name="content" ngModel required #content="ngModel"> </textarea>
+      <mat-error *ngIf="content.invalid">Please enter a post content</mat-error>
+    </mat-form-field>
+    <!-- Creating event binding in angular -->
+    <button mat-raised-button color="accent"  type="submit">
+      Save Post</button
+    ><!--Passing that attribute to our function -->
+  </form>
 </mat-card>
-
